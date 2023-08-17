@@ -54,13 +54,9 @@ The above Bold BI image can be deployed using Docker or Docker Compose. In the f
    ```sh
    curl -o docker-compose.yml "https://raw.githubusercontent.com/boldbi/boldbi-docker/main/deploy/single-container-pre-configured/docker-compose.yml"
    ```
-2. Open the Docker Compose file, fill in the mandatory fields, and save it. You can refer to the guidance provided below for filling in the APP_URL and BOLD_SERVICES_UNLOCK_KEY details.
+2. Open the Docker Compose file, fill in the mandatory fields, and save it. You can refer to the guidance provided below for filling in the BOLD_SERVICES_UNLOCK_KEY details.
 
     ![docker-compose-variable](docs/images/docker-compose-variable.png)
-
-      **APP_URL Guidance**
-      * For physical and GUI machines, you can mention the APP_URL as `http://localhost:8085` or `http://internal-ip-address:8085`. You can obtain the internal IP address by using the `ipconfig` or `ifconfig` command.
-      * For virtual machines and non-GUI machines, you can mention the APP_URL as `http://host-ip:8085` or `http://public-ip:8085`.
 
       **BOLD_SERVICES_UNLOCK_KEY Guidance**
       * Refer to [this](https://support.boldbi.com/kb/article/12983/how-to-get-offline-license-key-for-bold-bi) document to get Bold BI unlock key.
@@ -78,8 +74,13 @@ The above Bold BI image can be deployed using Docker or Docker Compose. In the f
    docker logs boldbi -f
    ```
    ![docker-boldbi-logs](docs/images/docker-logs.png)
-   
-5. Now, access the Bold BI application by entering the APP_URL in the browser. When opening this URL in the browser, it will configure the application startup in the background and display the page below within a few seconds.
+
+5. Now, access the Bold BI application by entering the URL as `http://localhost:port` or `http://host-ip:port-number` in the browser.
+
+    * For physical and GUI machines, you can use the URL as `http://localhost:8085` or `http://internal-ip-address:8085`. You can obtain the internal IP address by using the `ipconfig` or `ifconfig` command.
+    * For virtual machines and non-GUI machines, you can use URL as `http://host-ip:8085` or `http://public-ip:8085`.
+
+   When opening this URL in the browser, it will configure the application startup in the background and display the page below within a few seconds.
    
    ![docker-compose-startup](docs/images/docker-startup.png)
 
