@@ -6,7 +6,6 @@ You can store the application data on your host machine to make the Bold BI cont
    
    ```sh
      docker run --name boldbi -p 80:80 -p 443:443 \
-     -e APP_URL=<app_url> \
      -v <host_path_for_appdata_files>:/application/app_data \
      -v <host_path_for_nginx_config>:/etc/nginx/sites-available \
      -d syncfusion/boldbi:<tag>
