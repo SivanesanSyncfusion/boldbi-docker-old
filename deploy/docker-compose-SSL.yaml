@@ -21,7 +21,7 @@ services:
      - boldbi
    volumes:
      - boldbi_data:/application/app_data
-     - <path of domain.key file >y:/etc/nginx/sites-available/domain.key
+     - <path of domain.key file >:/etc/nginx/sites-available/domain.key
      - <path of domain.crt file>:/etc/nginx/sites-available/domain.crt
   pgdb:
     container_name: postgres
